@@ -1,0 +1,42 @@
+#项目的访问路径
+server:
+  servlet:
+    context-path: /warehouse
+  #项目的访问端口
+  port: 9999
+
+
+spring:
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_warehouse?serverTimezone=UTC
+    username: root
+    password: root
+  # #redis的配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+
+#mybatis的配置
+mybatis:
+  #SQL映射文件的位置
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    #开启驼峰命名法
+    map-underscore-to-camel-case: true
+    #日志功能
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 指定实体类起别名，（实体类所在的包的包路径，那么包中的所有实体类别名就默认是类名首字母小写）
+  type-aliases-package: com.pn.entity
+
+#自定义属性
+#自定义属性 - token过期时间: 令牌过期时间(单位秒),实际过期时间是该时间的两倍
+warehouse.expire-time: 3600
+
+#自定义属性 - 图片上传到的位置
+file.upload-path: "classpath:static/img/upload"
+#自定义属性 - 上传的图片保存数据库的访问路径的目录路径
+file.access-path: "/img/upload/"
+
