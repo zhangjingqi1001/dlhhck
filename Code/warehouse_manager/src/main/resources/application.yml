@@ -40,3 +40,30 @@ file.upload-path: "classpath:static/img/upload"
 #自定义属性 - 上传的图片保存数据库的访问路径的目录路径
 file.access-path: "/img/upload/"
 
+
+# 日志
+logging:
+  # name 和 path 只能有一个生效
+  file:
+    # 会在jar包运行目录生成一个日志文件
+    #    name: log/toint-cloud.log
+    # 会在指定的目录生成一个名为:spring.log的日志文件
+    path: E:/toint-cloud/printLog
+  logback:
+    rollingpolicy:
+      # 单个日志文件最大
+      max-file-size: 10MB
+  level:
+    # 日志等级
+    root: info
+  # 日志格式
+  pattern:
+    # 彩色
+    #        console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr([${LOG_LEVEL_PATTERN:%5p}]) %clr([${PID:-}]){magenta} %clr([%X{requestId}]){magenta} %clr([%15.15t]){faint} %clr([%-40.40logger{39}]){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    console: "%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}} [${LOG_LEVEL_PATTERN:%5p}] [${PID:-}] [%X{requestId}] [%15.15t] [%-40.40logger{39}] : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    # 无颜色,为了适配阿里云日志系统
+    file: "%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}} [${LOG_LEVEL_PATTERN:%5p}] [${PID:-}] [%X{requestId}] [%15.15t] [%-40.40logger{39}] : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  # 日志字符集
+  charset:
+    console: UTF-8
+    file: UTF-8
