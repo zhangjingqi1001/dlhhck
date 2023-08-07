@@ -48,7 +48,7 @@ public class TokenUtils {
                 .withClaim(CLAIM_NAME_USERNAME, currentUser.getUserName())//用户真实姓名
                 .withIssuedAt(new Date())//jwt token的办法时间
                 .withExpiresAt(new Date(System.currentTimeMillis() + expireTime *1000))//有效时间
-//               securityKey在这里是秘钥的意思
+//               指定签名 - 秘钥是用户密码 - securityKey在这里是秘钥的意思
                 .sign(Algorithm.HMAC256(securityKey));
         return token;
     }
@@ -60,7 +60,7 @@ public class TokenUtils {
         //生成token
         String token = sign(currentUser, password);
         //将token保存到redis中,并设置token在redis中的过期时间
-        stringRedisTemplate.opsForValue().set(token, token, expireTime *2, TimeUnit.SECONDS);
+        stringRedisTemplate.opsForValue().set(token, token, expireTime , TimeUnit.SECONDS);
         return token;
     }
 

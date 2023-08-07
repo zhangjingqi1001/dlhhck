@@ -3,14 +3,21 @@ package com.pn.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.code.kaptcha.Producer;
+import com.pn.entity.CurrentUser;
+import com.pn.entity.LoginUser;
 import com.pn.entity.Result;
 import com.pn.entity.User;
+import com.pn.service.UserService;
+import com.pn.utils.DigestUtil;
+import com.pn.utils.TokenUtils;
+import com.pn.utils.WarehouseConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,6 +41,7 @@ public class LoginController {
 
     @Autowired
     private StringRedisTemplate redisTemplate;
+
 
     //  要通过响应对象把生成的验证码图片返回给前端
     @RequestMapping("/captcha/captchaImage")
@@ -64,25 +72,59 @@ public class LoginController {
 
     }
 
-//  登录URL接口
-//    @RequestMapping("/login")
-//    public
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private TokenUtils tokenUtils;
 
-    @PostMapping("/test")
-    public ResponseEntity test(){
-        User user = new User();
-        user.setUserId(10086);
-        user.setUserCode("10088888");
+    //  登录URL接口
+    @RequestMapping("/login")
+    public Result login(@RequestBody LoginUser loginUser) {
+//      验证验证码是否正确
+        String verificationCode = loginUser.getVerificationCode();
+//      与Redis存储的验证码进行比较
+        if (!redisTemplate.hasKey(verificationCode)){
+//          Redis中没有对应的验证码
+            return Result.err(Result.CODE_ERR_BUSINESS, "验证码输入不正确");
+        }
 
-//      将对象转换成字符串
-        String userJsonStr = JSON.toJSONString(user);
-        log.info("userJsonStr - "+ userJsonStr);
+//      根据账号查询用户
+        User user = userService.queryUserByCode(loginUser.getUserCode());
+//      判断账号是否存在
+        if (user != null) {
+//          账号存在
+//          user表里有个字段user_state，表示用户是否已经被审核，0未审核，1已审核
+            if (user.getUserState().equals(WarehouseConstants.USER_STATE_PASS)) {
+//              代表是1，表示用户已经被审核，之后校验密码
+//              数据库中的密码是MD5加密的（MD5加密的数据不能解密），请求携带的密码是明文
+//              所以只能将明文密码加密与数据库中加密的数据对比
+                String userPwd = loginUser.getUserPwd();
+                userPwd = DigestUtil.hmacSign(userPwd);
+                if (userPwd.equals(user.getUserPwd())) {
+//                  密码正确，生成JWTToken，颁发给浏览器
+                    CurrentUser currentUser = new CurrentUser();
+                    currentUser.setUserId(user.getUserId());
+                    currentUser.setUserName(user.getUserName());
+                    currentUser.setUserCode(user.getUserName());
+//                  生成JWT Token并存储到Redis
+                    String token = tokenUtils.loginSign(currentUser, user.getUserPwd());
+//                  将token颁发给浏览器
+                    return Result.ok("登录成功",token);
+                } else {
+//                  密码错误
+                    return Result.err(Result.CODE_ERR_BUSINESS, "密码错误");
+                }
 
-//      再将JSON字符串转换成JSONObject类型
-        JSONObject jsonObject = JSON.parseObject(userJsonStr);
-        log.info("jsonObject - "+jsonObject);
-        jsonObject.put("aaa0","sssss");
-        return  new ResponseEntity<>(jsonObject, HttpStatus.OK);
+            } else {
+//              用户未审核
+                return Result.err(Result.CODE_ERR_BUSINESS, "用户未审核");
+            }
+        } else {
+//           账号不存在
+            return Result.err(Result.CODE_ERR_BUSINESS, "账号不存在");
+        }
+
     }
+
 
 }
