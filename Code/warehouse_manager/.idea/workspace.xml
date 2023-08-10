@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf2eead-645f-4d7b-ad7c-885831b42833" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/config/ServletConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Auth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/utils/TokenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/utils/TokenUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/utils/TokenUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/utils/TokenUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Note/2.登录相关业务.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/2.登录相关业务.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +59,9 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/pn/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/pn/entity" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -73,9 +76,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\entity" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\utils" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\exception" />
-      <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\entity" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\config" />
     </key>
   </component>
@@ -116,6 +119,11 @@
       <workItem from="1691237720925" duration="3609000" />
       <workItem from="1691322959798" duration="7881000" />
       <workItem from="1691417384506" duration="4609000" />
+      <workItem from="1691457888093" duration="1149000" />
+      <workItem from="1691500544632" duration="31000" />
+      <workItem from="1691544470131" duration="40000" />
+      <workItem from="1691588598171" duration="5058000" />
+      <workItem from="1691669479255" duration="8733000" />
     </task>
     <servers />
   </component>

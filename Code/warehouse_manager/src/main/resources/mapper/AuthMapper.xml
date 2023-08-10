@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pn.mapper.AuthMapper">
+    <!-- resultType写com.pn.entity.Auth行，写别名auth也行-->
+    <!-- user_role用户角色中间表、role_auth角色权限中间表、auth_info权限菜单表   -->
+    <!-- 这个方法的目的是根据用户id获取用户的权限-->
+    <select id="findAuthByUid" resultType="com.pn.entity.Auth">
+        select t3.*
+        from user_role t1,
+             role_auth t2,
+             auth_info t3
+        where t1.role_id = t2.role_id
+          and t2.auth_id = t3.auth_id
+          and t1.user_id = #{userId}
+          and t3.auth_state = 1
+          and t3.auth_type!=3
+    </select>
+
+</mapper>
