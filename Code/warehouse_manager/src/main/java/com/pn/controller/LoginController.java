@@ -74,7 +74,7 @@ public class LoginController {
 //      验证验证码是否正确
         String verificationCode = loginUser.getVerificationCode();
 //      与Redis存储的验证码进行比较
-        if (!redisTemplate.hasKey(verificationCode)){
+        if (!redisTemplate.hasKey(verificationCode)) {
 //          Redis中没有对应的验证码
             return Result.err(Result.CODE_ERR_BUSINESS, "验证码输入不正确");
         }
@@ -100,7 +100,7 @@ public class LoginController {
 //                  生成JWT Token并存储到Redis
                     String token = tokenUtils.loginSign(currentUser, user.getUserPwd());
 //                  将token颁发给浏览器
-                    return Result.ok("登录成功",token);
+                    return Result.ok("登录成功", token);
                 } else {
 //                  密码错误
                     return Result.err(Result.CODE_ERR_BUSINESS, "密码错误");
@@ -122,9 +122,9 @@ public class LoginController {
 
     //我们需要获取请求头，或者可以直接使用@RequestHeader("token") String token
     @RequestMapping("/curr-user")
-    public Result currentUser(HttpServletRequest request){
+    public Result currentUser(HttpServletRequest request) {
         String token = request.getHeader("token");
-        log.info("token - "+token);
+        log.info("token - " + token);
         CurrentUser currentUser = tokenUtils.getCurrentUser(token);
 
         return Result.ok(currentUser);
@@ -134,9 +134,18 @@ public class LoginController {
     private AuthService authService;
 
     @RequestMapping("/user/auth-list")
-    public Result loadAuthTree(@RequestHeader("token") String token){
+    public Result loadAuthTree(@RequestHeader("token") String token) {
         CurrentUser currentUser = tokenUtils.getCurrentUser(token);
 
         return Result.ok(authService.queryAuthTreeByUid(currentUser.getUserId()));
+    }
+
+    //退出登录
+    @RequestMapping("/logout")
+    public Result logout(@RequestHeader("token") String token){
+         //从redis中删除token的键
+         redisTemplate.delete(token);
+         //响应
+        return Result.ok("成功退出系统!");
     }
 }
