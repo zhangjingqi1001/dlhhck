@@ -40,4 +40,9 @@ public class UserController {
         return userService.saveUser(user);
     }
 
+//  启动或禁用用户
+    @RequestMapping("/updateState")
+    public Result updateState(@RequestBody User user){
+        return  userService.setUserState(user);
+    }
 }

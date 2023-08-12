@@ -13,4 +13,7 @@ public interface UserService {
 
 //  添加用户的业务方法
     public Result saveUser(User user);
+
+//   启动或禁用用户
+    public Result setUserState( User user);
 }

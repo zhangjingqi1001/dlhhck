@@ -54,8 +54,16 @@
     <!--添加用户的方法-->
     <insert id="addUser">
         insert into user_info
-            value (null,#{userCode},#{userName},#{userPwd},null,0,0,#{createBy},now(),null,null)
+            value (null,#{userCode},#{userName},#{userPwd}, null,0,0,#{createBy},now(), null, null)
     </insert>
+
+    <!--根据用户id修改用户状态-->
+    <update id="updateStateByUid">
+        update user_info
+        set user_state = #{userState}
+        where user_id = #{userId}
+    </update>
+
 </mapper>
 
 
