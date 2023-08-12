@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pn.mapper.RoleMapper">
+
+
+
+    <select id="getAllRole" resultType="com.pn.entity.Role">
+        select *
+        from role
+        where role_state = 1
+    </select>
+    <select id="getRoleByUserId" resultType="com.pn.entity.Role">
+        select r.*
+        from user_role u1,
+             role r
+        where u1.user_id = #{userId}
+          and u1.role_id = r.role_id
+          and r.role_state = 1
+    </select>
+
+    <!-- 根据角色名查询角色id-->
+    <select id="findRoleIdByName" resultType="java.lang.Integer">
+        select role.role_id
+        from role
+        where role.role_name = #{roleName}
+    </select>
+
+    <!--根据用户Id删除用户已经分配的角色关系-->
+    <delete id="removeUserRoleByUid">
+        delete
+        from user_role
+        where user_id = #{userId}
+    </delete>
+
+
+    <insert id="insertUserRole">
+        insert into user_role values(null,#{roleId},#{userId})
+    </insert>
+
+</mapper>

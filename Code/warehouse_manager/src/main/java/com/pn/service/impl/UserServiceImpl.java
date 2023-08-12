@@ -1,7 +1,9 @@
 package com.pn.service.impl;
 
+import com.pn.dto.AssignRoleDto;
 import com.pn.entity.Result;
 import com.pn.entity.User;
+import com.pn.mapper.RoleMapper;
 import com.pn.mapper.UserMapper;
 import com.pn.page.Page;
 import com.pn.service.UserService;
@@ -44,15 +46,15 @@ public class UserServiceImpl implements UserService {
     public Result saveUser(User user) {
 //      用户的账号不能重复
         User userByCode = userMapper.findUserByCode(user.getUserCode());
-        if (userByCode !=null){
-            return Result.err(Result.CODE_ERR_BUSINESS,"添加用户失败!账号重复");
+        if (userByCode != null) {
+            return Result.err(Result.CODE_ERR_BUSINESS, "添加用户失败!账号重复");
         }
 //      对密码加密
         String password = DigestUtil.hmacSign(user.getUserPwd());
         user.setUserPwd(password);
         int success = userMapper.addUser(user);
 
-        return success>0? Result.ok("添加成功") : Result.err(Result.CODE_ERR_BUSINESS,"添加用户失败");
+        return success > 0 ? Result.ok("添加成功") : Result.err(Result.CODE_ERR_BUSINESS, "添加用户失败");
     }
 
     //启动或禁用用户
@@ -60,7 +62,26 @@ public class UserServiceImpl implements UserService {
     public Result setUserState(User user) {
         int success = userMapper.updateStateByUid(user.getUserId(), user.getUserState());
 
-        return success>0? Result.ok("修改成功"):Result.err(Result.CODE_ERR_BUSINESS,"修改失败");
+        return success > 0 ? Result.ok("修改成功") : Result.err(Result.CODE_ERR_BUSINESS, "修改失败");
+    }
+
+    @Autowired
+    private RoleMapper roleMapper;
+
+    //  给用户修改角色信息
+    @Override
+    public Result changeUserRole(AssignRoleDto assignRoleDto) {
+//      将之前的关系删除掉
+        roleMapper.removeUserRoleByUid(assignRoleDto.getUserId());
+
+//      获取我们要添加的角色的ID
+        List<String> roleNameList = assignRoleDto.getRoleCheckList();
+        for(String role:roleNameList){
+            Integer roleId = roleMapper.findRoleIdByName(role);
+            roleMapper.insertUserRole(assignRoleDto.getUserId(),roleId);
+        }
+
+        return Result.ok("更改角色成功");
     }
 
 

@@ -1,5 +1,6 @@
 package com.pn.service;
 
+import com.pn.dto.AssignRoleDto;
 import com.pn.entity.Result;
 import com.pn.entity.User;
 import com.pn.page.Page;
@@ -16,4 +17,7 @@ public interface UserService {
 
 //   启动或禁用用户
     public Result setUserState( User user);
+
+//  给用户修改角色信息
+    public Result changeUserRole(AssignRoleDto assignRoleDto);
 }

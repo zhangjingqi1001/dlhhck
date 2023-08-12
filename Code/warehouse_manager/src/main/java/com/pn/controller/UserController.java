@@ -1,17 +1,16 @@
 package com.pn.controller;
 
+import com.pn.dto.AssignRoleDto;
 import com.pn.entity.CurrentUser;
 import com.pn.entity.Result;
 import com.pn.entity.User;
 import com.pn.page.Page;
+import com.pn.service.RoleService;
 import com.pn.service.UserService;
 import com.pn.utils.TokenUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -44,5 +43,20 @@ public class UserController {
     @RequestMapping("/updateState")
     public Result updateState(@RequestBody User user){
         return  userService.setUserState(user);
+    }
+
+    @Autowired
+    private RoleService roleService;
+
+//  获取用户已经分配的角色
+    @RequestMapping("/user-role-list/{userId}")
+    public Result userRoleList(@PathVariable("userId") Integer userId){
+          return Result.ok(roleService.getRoleByUserId(userId));
+    }
+
+//  给用户分配角色
+    @RequestMapping("/assignRole")
+    public Result assignRole(@RequestBody AssignRoleDto assignRoleDto){
+        return userService.changeUserRole(assignRoleDto);
     }
 }
