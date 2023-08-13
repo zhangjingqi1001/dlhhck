@@ -1,6 +1,8 @@
 package com.pn.controller;
 
 import com.pn.entity.Result;
+import com.pn.entity.Role;
+import com.pn.page.Page;
 import com.pn.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,12 @@ public class RoleController {
     @RequestMapping("/role-list")
     public Result roleList() {
         return Result.ok(roleService.getAllRole());
+    }
+
+    //分页查询角色
+    @RequestMapping("/role-page-list")
+    public Result roleListPage(Page page, Role role) {
+        return Result.ok(roleService.queryRolePage(page,role));
     }
 
 }

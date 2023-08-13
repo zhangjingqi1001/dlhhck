@@ -5,7 +5,6 @@
 <mapper namespace="com.pn.mapper.RoleMapper">
 
 
-
     <select id="getAllRole" resultType="com.pn.entity.Role">
         select *
         from role
@@ -27,6 +26,7 @@
         where role.role_name = #{roleName}
     </select>
 
+
     <!--根据用户Id删除用户已经分配的角色关系-->
     <delete id="removeUserRoleByUid">
         delete
@@ -36,7 +36,44 @@
 
 
     <insert id="insertUserRole">
-        insert into user_role values(null,#{roleId},#{userId})
+        insert into user_role
+        values (null, #{roleId}, #{userId})
     </insert>
+
+    <!--查询记录总数-->
+    <select id="findRoleRowCount" resultType="java.lang.Integer">
+        select count(*)
+        from role r
+        <where>
+            <if test="role.roleName !=null and role.roleName!='' ">
+                 r.role_name like concat('%', #{role.roleName}, '%')
+            </if>
+            <if test="role.roleCode !=null and role.roleCode!='' ">
+                and r.role_code like concat('%', #{role.roleCode}, '%')
+            </if>
+            <if test="role.roleState !=null and role.roleState!='' ">
+                and r.role_state = #{role.roleState}
+            </if>
+        </where>
+    </select>
+    <!--分页查询数据-->
+    <select id="findRolePage" resultType="com.pn.entity.Role">
+        select t1.*, t2.user_code getCode
+        from role t1, user_info t2
+        <where>
+            t1.create_by = t2.user_id
+            <if test="role.roleName != null and role.roleName != ''">
+                and t1.role_name like concat('%', #{role.roleName}, '%')
+            </if>
+            <if test="role.roleCode != null and role.roleCode != ''">
+                and t1.role_code like concat('%', #{role.roleCode}, '%')
+            </if>
+            <if test="role.roleState != null and role.roleState != ''">
+                and t1.role_state = #{role.roleState}
+            </if>
+            order by t1.create_time desc
+            limit #{page.limitIndex}, #{page.pageSize}
+        </where>
+    </select>
 
 </mapper>

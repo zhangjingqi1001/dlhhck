@@ -19,7 +19,7 @@
         <where>
             is_delete=0
             <if test="userCode !=null and userCode!=''">
-                and user_code like %#{userCode}%
+                and user_code like concat('%', #{userCode}, '%')
             </if>
             <if test="userType!=null and userType!='' ">
                 and user_type = #{userType}
@@ -38,7 +38,7 @@
             t1.create_by = t2.user_id
             and t1.is_delete =0
             <if test="user.userCode !=null and user.userCode!=''">
-                and t1.user_code like %#{user.userCode}%
+                and t1.user_code like  concat('%', #{user.userCode}, '%')
             </if>
             <if test="user.userType!=null and user.userType!='' ">
                 and t1.user_type = #{user.userType}

@@ -1,6 +1,7 @@
 package com.pn.mapper;
 
 import com.pn.entity.Role;
+import com.pn.page.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -23,5 +24,9 @@ public interface RoleMapper {
 //  向user_role表添加用户角色对应关系
     public int insertUserRole(@Param("userId") Integer userId,@Param("roleId")Integer roleId);
 
+//  查询角色行数的方法
+    public Integer findRoleRowCount(@Param("role") Role role);
+//  分页查询角色的方法
+    public List<Role> findRolePage(@Param("page")Page page,@Param("role")Role role);
 
 }
