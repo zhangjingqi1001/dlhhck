@@ -27,4 +27,9 @@ public interface UserMapper {
 //  根据用户id修改用户的状态
     public int updateStateByUid(@Param("userId") int userId,@Param("userState") String userState);
 
+//  根据用户ids修改用户为删除状态的方法
+    public int setIsDeleteByUids(List<Integer> userIdList);
+
+
+
 }

@@ -84,5 +84,12 @@ public class UserServiceImpl implements UserService {
         return Result.ok("更改角色成功");
     }
 
+//  批量删除用户
+    @Override
+    public Result deleteUserByIds(List<Integer> userIdList) {
+        int success = userMapper.setIsDeleteByUids(userIdList);
+        return success>0? Result.ok("删除用户成功") : Result.err(Result.CODE_ERR_BUSINESS,"删除用户失败");
+    }
+
 
 }

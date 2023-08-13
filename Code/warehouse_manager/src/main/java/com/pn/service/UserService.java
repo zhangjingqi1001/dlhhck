@@ -5,6 +5,8 @@ import com.pn.entity.Result;
 import com.pn.entity.User;
 import com.pn.page.Page;
 
+import java.util.List;
+
 public interface UserService {
 //  根据账号查询用户的业务方法
     public User queryUserByCode(String userCode);
@@ -20,4 +22,7 @@ public interface UserService {
 
 //  给用户修改角色信息
     public Result changeUserRole(AssignRoleDto assignRoleDto);
+
+//  删除用户的业务方法
+    public Result deleteUserByIds(List<Integer> userIdList);
 }

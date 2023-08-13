@@ -64,6 +64,19 @@
         where user_id = #{userId}
     </update>
 
+    <!--根据id集合批量删除用户-->
+    <!--如果方法的参数是一个List集合，默认是以键list，值就是我们真正的List集合，
+        保存到我们的Mybatis封装方法参数的那个Map集合
+     -->
+    <update id="setIsDeleteByUids">
+        update user_info set is_delete=1 where user_id in
+
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+
+    </update>
+
 </mapper>
 
 
