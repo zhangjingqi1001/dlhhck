@@ -1,5 +1,6 @@
 package com.pn.service.impl;
 
+import com.pn.entity.Result;
 import com.pn.entity.Role;
 import com.pn.mapper.RoleMapper;
 import com.pn.page.Page;
@@ -43,6 +44,18 @@ public class RoleServiceImpl implements RoleService {
         List<Role> rolePage = roleMapper.findRolePage(page, role);
         page.setResultList(rolePage);
         return page;
+    }
+
+    @Cacheable(key = "'all:role'")//记得清除一个Redis缓存中role角色信息
+    @Override
+    public Result saveRole(Role role) {
+        Role roleByNameOrCode = roleMapper.findRoleByNameOrCode(role.getRoleName(), role.getRoleCode());
+        if (roleByNameOrCode != null){
+            return Result.err(Result.CODE_ERR_BUSINESS, "添加角色失败!角色已存在");
+        }
+        int success = roleMapper.insertRole(role);
+
+        return success > 0 ? Result.ok("添加成功") : Result.err(Result.CODE_ERR_BUSINESS, "角色添加失败");
     }
 
 }

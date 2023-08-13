@@ -29,4 +29,9 @@ public interface RoleMapper {
 //  分页查询角色的方法
     public List<Role> findRolePage(@Param("page")Page page,@Param("role")Role role);
 
+//  根据角色名称或角色代码查询角色的方法
+    public Role findRoleByNameOrCode(@Param("roleName")String roleName,@Param("roleCode")String roleCode);
+
+//  添加角色的方法
+    public int insertRole(@Param("role")Role role);
 }

@@ -1,5 +1,6 @@
 package com.pn.service;
 
+import com.pn.entity.Result;
 import com.pn.entity.Role;
 import com.pn.page.Page;
 import org.apache.ibatis.annotations.Param;
@@ -15,4 +16,7 @@ public interface RoleService {
 
    //分页查询角色的业务方法
     public Page queryRolePage(Page page,Role role);
+
+    //添加角色的业务方法
+    public Result saveRole(Role role);
 }

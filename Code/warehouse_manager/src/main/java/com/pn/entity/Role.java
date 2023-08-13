@@ -18,6 +18,8 @@ import java.util.Date;
 @ToString
 public class Role implements Serializable {
 
+    private static final long serialVersionUID = 8236139593024637658L;
+
     private int roleId;//角色id
 
     private String roleName;//角色名称
