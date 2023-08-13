@@ -91,5 +91,21 @@ public class UserServiceImpl implements UserService {
         return success>0? Result.ok("删除用户成功") : Result.err(Result.CODE_ERR_BUSINESS,"删除用户失败");
     }
 
+//  修改用户昵称
+    @Override
+    public Result setUserById(Integer userId, String userName, int updateBy) {
+        int success = userMapper.setUserNameByUid(userId, userName, updateBy);
+
+        return success>0? Result.ok("删除用户成功") : Result.err(Result.CODE_ERR_BUSINESS,"删除用户失败");
+    }
+
+    @Override
+    public Result setPwdByUid(Integer userId) {
+        String password = DigestUtil.hmacSign("123456");
+        int success = userMapper.setPwdByUid(userId, password);
+
+        return success>0? Result.ok("重置密码成功") : Result.err(Result.CODE_ERR_BUSINESS,"重置密码失败");
+    }
+
 
 }

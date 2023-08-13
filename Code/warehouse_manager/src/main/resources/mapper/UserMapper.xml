@@ -77,6 +77,21 @@
 
     </update>
 
+    <!--修改用户昵称的方法-->
+    <update id="setUserNameByUid">
+        update user_info
+        set user_name=#{userName},
+            update_by=#{updateBy},
+            update_time=now()
+        where user_id = #{userId}
+    </update>
+    <!--初始化用户的密码-->
+    <update id="setPwdByUid">
+        update user_info
+        set user_pwd = #{password}
+        where user_id = #{userId}
+    </update>
+
 </mapper>
 
 

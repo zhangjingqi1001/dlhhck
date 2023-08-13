@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -74,6 +73,18 @@ public class UserController {
     @RequestMapping("/deleteUserList")
     public Result deleteUserById(@RequestBody List<Integer> userIdList) {
         return userService.deleteUserByIds(userIdList);
+    }
+
+    //修改用户昵称
+    @RequestMapping("/updateUser")
+    public Result updateUser(@RequestBody User user, @RequestHeader("Token") String token) {
+        return userService.setUserById(user.getUserId(), user.getUserName(), tokenUtils.getCurrentUser(token).getUserId());
+    }
+
+    //根据用户id初始化用户密码
+    @RequestMapping("/updatePwd/{userId}")
+    public Result resetPassword(@PathVariable("userId") Integer userId){
+        return userService.setPwdByUid(userId);
     }
 
 }

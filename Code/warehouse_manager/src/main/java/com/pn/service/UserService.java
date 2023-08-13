@@ -4,6 +4,7 @@ import com.pn.dto.AssignRoleDto;
 import com.pn.entity.Result;
 import com.pn.entity.User;
 import com.pn.page.Page;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -25,4 +26,10 @@ public interface UserService {
 
 //  删除用户的业务方法
     public Result deleteUserByIds(List<Integer> userIdList);
+
+//  修改用户的业务方法
+    public Result setUserById(Integer userId, String userName, int updateBy);
+
+//  根据用户id修改密码的方法
+    public Result setPwdByUid(Integer userId);
 }

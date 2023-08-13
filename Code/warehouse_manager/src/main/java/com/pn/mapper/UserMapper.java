@@ -30,6 +30,10 @@ public interface UserMapper {
 //  根据用户ids修改用户为删除状态的方法
     public int setIsDeleteByUids(List<Integer> userIdList);
 
+//  修改用户昵称的方法
+    public int setUserNameByUid(@Param("userId")Integer userId,@Param("userName")String userName, @Param("updateBy")int updateBy );
 
+//  根据用户id修改密码的方法
+    public int setPwdByUid(@Param("userId")Integer userId,@Param("password")String password);
 
 }
