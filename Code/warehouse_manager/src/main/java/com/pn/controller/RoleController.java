@@ -4,6 +4,7 @@ import com.pn.entity.CurrentUser;
 import com.pn.entity.Result;
 import com.pn.entity.Role;
 import com.pn.page.Page;
+import com.pn.service.AuthService;
 import com.pn.service.RoleService;
 import com.pn.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,5 +51,14 @@ public class RoleController {
     @RequestMapping("/role-delete/{roleId}")
     public Result deleteRole(@PathVariable("roleId") Integer roleId){
      return roleService.deleteRoleById(roleId);
+    }
+
+    @Autowired
+    private AuthService authService;
+
+    @RequestMapping("/role-auth")
+    public Result roleAuth(Integer roleId){
+        return  Result.ok( authService.findAuthByRid(roleId));
+
     }
 }

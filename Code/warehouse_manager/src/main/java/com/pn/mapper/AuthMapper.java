@@ -13,4 +13,10 @@ public interface AuthMapper {
 
     //根据角色id删除user_role表中对应关系
     public int deleteRoleAuthRelation(@Param("roleId") Integer roleId);
+
+//  查询所有权限菜单的方法
+    public List<Auth> findAllAuth();
+
+//  根据角色id查询分配的所有权限菜单的方法
+    public List<Integer> findAuthIdByRid(@Param("roleId") Integer roleId);
 }

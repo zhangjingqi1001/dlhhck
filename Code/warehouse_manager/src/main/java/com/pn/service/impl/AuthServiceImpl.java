@@ -1,11 +1,12 @@
 package com.pn.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.pn.entity.Auth;
 import com.pn.mapper.AuthMapper;
 import com.pn.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -13,6 +14,7 @@ import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+@CacheConfig(cacheNames = "com.pn.service.impl.AuthServiceImpl")
 @Service
 public class AuthServiceImpl implements AuthService {
     @Autowired
@@ -45,7 +47,9 @@ public class AuthServiceImpl implements AuthService {
         return authTreeList;
     }
 
-//  将所有菜单List<Auth>转成菜单树List<Auth>
+
+
+    //  将所有菜单List<Auth>转成菜单树List<Auth>
 //  第一次的话pid是0
     private  List<Auth> allAuthToAuthTree( List<Auth> allAuthList,Integer pid){
         List<Auth> firstLevelAuthList = new ArrayList<>();
@@ -65,6 +69,20 @@ public class AuthServiceImpl implements AuthService {
         }
 
         return firstLevelAuthList;
+    }
+
+    @Cacheable("'all:authTree'")
+    @Override
+    public List<Auth> allAuthTree() {
+//      查询出所有权限菜单
+        List<Auth> allAuth = authMapper.findAllAuth();
+//      将所有权限菜单转成菜单树
+        return allAuthToAuthTree(allAuth, 0);
+    }
+
+    @Override
+    public List<Integer> findAuthByRid(Integer roleId) {
+        return authMapper.findAuthIdByRid(roleId);
     }
 
 

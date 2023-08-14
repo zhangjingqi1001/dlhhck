@@ -19,10 +19,37 @@
           and t3.auth_type!=3
     </select>
 
+
     <delete id="deleteRoleAuthRelation">
         delete
         from role_auth
         where role_id = #{roleId}
     </delete>
+
+    <select id="findAllAuth" resultType="com.pn.entity.Auth">
+        select *
+        from auth_info
+        where auth_state = 1
+          and auth_type != 3
+    </select>
+
+<!--    <select id="findAuthByRid" resultType="com.pn.entity.Auth">-->
+<!--        select *-->
+<!--        from role_auth,-->
+<!--             auth_info-->
+<!--        where role_auth.auth_id = auth_info.auth_id-->
+<!--          and role_auth.role_id = #{roleId}-->
+<!--          and auth_info.auth_state=1-->
+<!--          and auth_info.auth_type != 3-->
+<!--    </select>-->
+    <select id="findAuthIdByRid" resultType="java.lang.Integer">
+                select auth_info.auth_id
+                from role_auth,
+                     auth_info
+                where role_auth.auth_id = auth_info.auth_id
+                  and role_auth.role_id = #{roleId}
+                  and auth_info.auth_state=1
+                  and auth_info.auth_type != 3
+    </select>
 
 </mapper>
