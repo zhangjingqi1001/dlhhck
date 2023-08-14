@@ -21,6 +21,6 @@ public interface RoleService {
     public Result saveRole(Role role);
 
     //根据角色id修改角色状态的方法
-    public Result setRoleStateByRid(Integer roleId,String roleState);
+    public Result setRoleStateByRid(Role role);
 
 }
