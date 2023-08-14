@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf2eead-645f-4d7b-ad7c-885831b42833" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/entity/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Auth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/RoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/entity/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/entity/Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/mapper/AuthMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/mapper/AuthMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/impl/AuthServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/impl/AuthServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AuthMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Note/4. 角色管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/4. 角色管理.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +133,7 @@
       <workItem from="1691823171034" duration="24641000" />
       <workItem from="1691995883660" duration="1974000" />
       <workItem from="1691998138434" duration="3533000" />
-      <workItem from="1692009341147" duration="5005000" />
+      <workItem from="1692009341147" duration="6959000" />
     </task>
     <servers />
   </component>

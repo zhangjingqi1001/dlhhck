@@ -1,5 +1,6 @@
 package com.pn.service;
 
+import com.pn.dto.AssignAuthDto;
 import com.pn.entity.Result;
 import com.pn.entity.Role;
 import com.pn.page.Page;
@@ -26,4 +27,6 @@ public interface RoleService {
     //删除角色的业务方法
     public Result deleteRoleById(Integer roleId);
 
+    //给角色分配权限的业务方法
+    public void saveRoleAuth(AssignAuthDto assignAuthDto);
 }

@@ -1,5 +1,6 @@
 package com.pn.service.impl;
 
+import com.pn.dto.AssignAuthDto;
 import com.pn.entity.Result;
 import com.pn.entity.Role;
 import com.pn.mapper.AuthMapper;
@@ -11,6 +12,7 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class RoleServiceImpl implements RoleService {
         return roleMapper.getRoleByUserId(userId);
     }
 
+    @Transactional
     @Override
     public Page queryRolePage(Page page, Role role) {
         Integer roleRowCount = roleMapper.findRoleRowCount(role);
@@ -50,11 +53,12 @@ public class RoleServiceImpl implements RoleService {
         return page;
     }
 
+    @Transactional
     @CacheEvict(key = "'all:role'")//记得清除一个Redis缓存中role角色信息
     @Override
     public Result saveRole(Role role) {
         Role roleByNameOrCode = roleMapper.findRoleByNameOrCode(role.getRoleName(), role.getRoleCode());
-        if (roleByNameOrCode != null){
+        if (roleByNameOrCode != null) {
             return Result.err(Result.CODE_ERR_BUSINESS, "添加角色失败!角色已存在");
         }
         int success = roleMapper.insertRole(role);
@@ -69,17 +73,31 @@ public class RoleServiceImpl implements RoleService {
         return success > 0 ? Result.ok("状态修改成功") : Result.err(Result.CODE_ERR_BUSINESS, "状态修改失败");
     }
 
+    @Transactional
     @CacheEvict(key = "'all:role'")//记得清除一个Redis缓存中role角色信息
     @Override
     public Result deleteRoleById(Integer roleId) {
         int successRole = roleMapper.removeRoleById(roleId);
-        if (successRole>0){
+        if (successRole > 0) {
 //           删除用户角色关系中对应内容
-             roleMapper.deleteRoleUserRelation(roleId);
+            roleMapper.deleteRoleUserRelation(roleId);
 //           删除角色权限关系
             authMapper.deleteRoleAuthRelation(roleId);
         }
         return Result.ok("删除成功");
+    }
+
+    @Transactional
+    @Override
+    public void saveRoleAuth(AssignAuthDto assignAuthDto) {
+//       删除角色与权限之前的对应关系
+        authMapper.deleteRoleAuthRelation(assignAuthDto.getRoleId());
+//      添加角色权限关系
+        List<Integer> authIds = assignAuthDto.getAuthIds();
+        for (Integer authId : authIds){
+            authMapper.insertRoleAuth(assignAuthDto.getRoleId(),authId);
+        }
+
     }
 
 }

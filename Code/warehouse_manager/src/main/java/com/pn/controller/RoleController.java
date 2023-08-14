@@ -1,5 +1,6 @@
 package com.pn.controller;
 
+import com.pn.dto.AssignAuthDto;
 import com.pn.entity.CurrentUser;
 import com.pn.entity.Result;
 import com.pn.entity.Role;
@@ -60,5 +61,11 @@ public class RoleController {
     public Result roleAuth(Integer roleId){
         return  Result.ok( authService.findAuthByRid(roleId));
 
+    }
+
+    @RequestMapping("/auth-grant")
+    public Result grantAuth(@RequestBody AssignAuthDto assignAuthDto){
+           roleService.saveRoleAuth(assignAuthDto);
+           return Result.ok("权限分配成功");
     }
 }
