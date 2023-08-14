@@ -43,4 +43,11 @@ public class RoleController {
         return roleService.saveRole(role);
     }
 
+    //启动或禁用角色的url接口
+    @RequestMapping("/role-state-update")
+    public Result updateRoleState(@RequestBody Role role){
+       return roleService.setRoleStateByRid(role.getRoleId(), role.getRoleState());
+    }
+
+
 }

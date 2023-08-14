@@ -58,4 +58,11 @@ public class RoleServiceImpl implements RoleService {
         return success > 0 ? Result.ok("添加成功") : Result.err(Result.CODE_ERR_BUSINESS, "角色添加失败");
     }
 
+    @Cacheable(key = "'all:role'")//记得清除一个Redis缓存中role角色信息
+    @Override
+    public Result setRoleStateByRid(Integer roleId, String roleState) {
+        int success = roleMapper.setRoleStateByRid(roleId, roleState);
+        return success > 0 ? Result.ok("状态修改成功") : Result.err(Result.CODE_ERR_BUSINESS, "状态修改失败");
+    }
+
 }

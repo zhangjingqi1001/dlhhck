@@ -34,4 +34,8 @@ public interface RoleMapper {
 
 //  添加角色的方法
     public int insertRole(@Param("role")Role role);
+
+//  根据角色id修改角色状态的方法
+    public int setRoleStateByRid(@Param("roleId")Integer roleId,@Param("roleState")String roleState);
+
 }
