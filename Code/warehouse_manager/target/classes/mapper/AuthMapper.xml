@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pn.mapper.AuthMapper">
+
     <!-- resultType写com.pn.entity.Auth行，写别名auth也行-->
     <!-- user_role用户角色中间表、role_auth角色权限中间表、auth_info权限菜单表   -->
     <!-- 这个方法的目的是根据用户id获取用户的权限-->
@@ -17,5 +18,11 @@
           and t3.auth_state = 1
           and t3.auth_type!=3
     </select>
+
+    <delete id="deleteRoleAuthRelation">
+        delete
+        from role_auth
+        where role_id = #{roleId}
+    </delete>
 
 </mapper>

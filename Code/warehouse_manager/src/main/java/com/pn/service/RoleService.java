@@ -23,4 +23,7 @@ public interface RoleService {
     //根据角色id修改角色状态的方法
     public Result setRoleStateByRid(Role role);
 
+    //删除角色的业务方法
+    public Result deleteRoleById(Integer roleId);
+
 }

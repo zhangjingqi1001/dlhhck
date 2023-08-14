@@ -2,6 +2,7 @@ package com.pn.service.impl;
 
 import com.pn.entity.Result;
 import com.pn.entity.Role;
+import com.pn.mapper.AuthMapper;
 import com.pn.mapper.RoleMapper;
 import com.pn.page.Page;
 import com.pn.service.RoleService;
@@ -20,6 +21,8 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     private RoleMapper roleMapper;
 
+    @Autowired
+    private AuthMapper authMapper;
 
     @Cacheable(key = "'all:role'")
     @Override
@@ -64,6 +67,19 @@ public class RoleServiceImpl implements RoleService {
     public Result setRoleStateByRid(Role role) {
         int success = roleMapper.setRoleStateByRid(role.getRoleId(), role.getRoleState());
         return success > 0 ? Result.ok("状态修改成功") : Result.err(Result.CODE_ERR_BUSINESS, "状态修改失败");
+    }
+
+    @CacheEvict(key = "'all:role'")//记得清除一个Redis缓存中role角色信息
+    @Override
+    public Result deleteRoleById(Integer roleId) {
+        int successRole = roleMapper.removeRoleById(roleId);
+        if (successRole>0){
+//           删除用户角色关系中对应内容
+             roleMapper.deleteRoleUserRelation(roleId);
+//           删除角色权限关系
+            authMapper.deleteRoleAuthRelation(roleId);
+        }
+        return Result.ok("删除成功");
     }
 
 }

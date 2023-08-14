@@ -7,10 +7,7 @@ import com.pn.page.Page;
 import com.pn.service.RoleService;
 import com.pn.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/role")
@@ -45,9 +42,13 @@ public class RoleController {
 
     //启动或禁用角色的url接口
     @RequestMapping("/role-state-update")
-    public Result updateRoleState(@RequestBody Role role){
+    public Result updateRoleState(@RequestBody Role role) {
         return roleService.setRoleStateByRid(role);
     }
 
-
+    //删除角色的url接口
+    @RequestMapping("/role-delete/{roleId}")
+    public Result deleteRole(@PathVariable("roleId") Integer roleId){
+     return roleService.deleteRoleById(roleId);
+    }
 }

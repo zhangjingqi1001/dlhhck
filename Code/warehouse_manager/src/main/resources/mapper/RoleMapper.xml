@@ -93,4 +93,15 @@
         where role_id = #{roleId}
     </update>
 
+    <delete id="removeRoleById">
+        delete
+        from role
+        where role_id = #{roleId}
+    </delete>
+    <delete id="deleteRoleUserRelation">
+        delete
+        from user_role
+        where role_id = #{roleId}
+    </delete>
+
 </mapper>

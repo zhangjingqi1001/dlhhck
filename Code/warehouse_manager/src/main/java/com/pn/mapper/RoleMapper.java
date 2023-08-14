@@ -38,4 +38,8 @@ public interface RoleMapper {
 //  根据角色id修改角色状态的方法
     public int setRoleStateByRid(@Param("roleId")Integer roleId,@Param("roleState")String roleState);
 
+//  根据角色id删除角色的方法
+    public int removeRoleById(@Param("roleId") Integer roleId);
+//  根据角色id删除user_role表中对应关系
+    public int deleteRoleUserRelation(@Param("roleId") Integer roleId);
 }
