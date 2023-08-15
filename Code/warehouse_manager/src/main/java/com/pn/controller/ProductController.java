@@ -4,9 +4,7 @@ import com.pn.entity.Product;
 import com.pn.entity.Result;
 import com.pn.mapper.ProductMapper;
 import com.pn.page.Page;
-import com.pn.service.BrandService;
-import com.pn.service.ProductService;
-import com.pn.service.StoreService;
+import com.pn.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,4 +46,42 @@ public class ProductController {
         page = productService.queryProductPage(page, product);
         return Result.ok(page);
     }
+
+    @Autowired
+    private ProductTypeService productTypeTree;
+
+    //查询所有商品分类树的接口
+    @RequestMapping("/category-tree")
+    public Result loadTypeTree(){
+        return Result.ok(productTypeTree.productTypeTree());
+    }
+
+    @Autowired
+    private SupplyService supplyService;
+
+    // 查询所有供应商的接口
+    @RequestMapping("/supply-list")
+    public Result supplyList(){
+        return Result.ok(supplyService.supplyMapper());
+    }
+
+
+    @Autowired
+    private PlaceService placeService;
+
+    @RequestMapping("/place-list")
+    public Result placeList(){
+//      执行业务
+        return Result.ok(placeService.queryAllPlace());
+    }
+
+    @Autowired
+    private UnitService unitService;
+
+    @RequestMapping("/unit-list")
+    public Result unitList(){
+//      执行业务
+        return Result.ok(unitService.queryAllUnit());
+    }
+
 }

@@ -86,4 +86,10 @@
         order by t1.create_time
         limit #{page.limitIndex}, #{page.pageSize}
     </select>
+
+    <select id="findAllProductType" resultType="com.pn.entity.ProductType">
+        select *
+        from product_type
+    </select>
+
 </mapper>

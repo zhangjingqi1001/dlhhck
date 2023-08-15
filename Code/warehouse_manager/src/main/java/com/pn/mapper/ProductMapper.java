@@ -1,6 +1,7 @@
 package com.pn.mapper;
 
 import com.pn.entity.Product;
+import com.pn.entity.ProductType;
 import com.pn.page.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -16,4 +17,6 @@ public interface ProductMapper {
 //  分页查询商品的方法
     public List<Product> findProductPage(@Param("page") Page page, @Param("product") Product product);
 
+//  查询所有商品分类的方法
+    public List<ProductType>  findAllProductType();
 }
