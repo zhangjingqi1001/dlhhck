@@ -5,11 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf2eead-645f-4d7b-ad7c-885831b42833" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Place.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Supply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Unit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/BrandMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/StoreMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/BrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/StoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/StoreServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BrandMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/StoreMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Note/4. 角色管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/4. 角色管理.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +79,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/pn/dto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -78,11 +94,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\dto" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\resources\mapper" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\entity" />
+      <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\dto" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\page" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pn.mapper" />
     </key>
   </component>
   <component name="RunManager">
@@ -133,7 +152,8 @@
       <workItem from="1691823171034" duration="24641000" />
       <workItem from="1691995883660" duration="1974000" />
       <workItem from="1691998138434" duration="3533000" />
-      <workItem from="1692009341147" duration="6959000" />
+      <workItem from="1692009341147" duration="7318000" />
+      <workItem from="1692072887375" duration="8672000" />
     </task>
     <servers />
   </component>
