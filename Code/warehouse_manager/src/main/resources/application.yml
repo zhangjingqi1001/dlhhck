@@ -18,6 +18,7 @@ spring:
     host: 127.0.0.1
     port: 6379
     database: 0
+    password: root
 
 #mybatis的配置
 mybatis:
@@ -36,9 +37,12 @@ mybatis:
 warehouse.expire-time: 3600
 
 #自定义属性 - 图片上传到的位置
-file.upload-path: "classpath:static/img/upload"
-#自定义属性 - 上传的图片保存数据库的访问路径的目录路径
-file.access-path: "/img/upload/"
+file:
+  upload-path: classpath:static/img/upload
+  #自定义属性 - 上传的图片保存数据库的访问路径的目录路径
+  access-path: /img/upload/
+
+
 
 
 # 日志

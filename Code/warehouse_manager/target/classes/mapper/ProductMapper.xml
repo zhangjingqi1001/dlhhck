@@ -92,4 +92,31 @@
         from product_type
     </select>
 
+    <!--添加商品的方法-->
+    <insert id="insertProduct">
+        insert into product
+        values (null, #{storeId}, #{brandId}, #{productName}, #{productNum},
+                #{productInvent}, #{typeId}, #{supplyId}, #{placeId}, #{unitId},
+                #{introduce}, 0, #{inPrice}, #{salePrice}, #{memPrice}, now(),
+                null, #{createBy}, null, #{imgs}, #{productDate}, #{suppDate})
+    </insert>
+
+    <select id="findProductByNum" resultType="com.pn.entity.Product">
+        select  * from product where product_num=#{productNum}
+    </select>
+
+    <update id="setStateByPid">
+        update product set up_down_state=#{upDownState} where product_id = #{productId}
+    </update>
+
+
+    <delete id="removeProductByIds">
+        delete from product
+        where product_id in
+        <foreach collection="list" open="(" close=")" separator="," item="prod">
+            #{prod}
+        </foreach>
+    </delete>
+
+
 </mapper>

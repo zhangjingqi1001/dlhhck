@@ -92,4 +92,58 @@
         from product_type
     </select>
 
+    <!--添加商品的方法-->
+    <insert id="insertProduct">
+        insert into product
+        values (null, #{storeId}, #{brandId}, #{productName}, #{productNum},
+                #{productInvent}, #{typeId}, #{supplyId}, #{placeId}, #{unitId},
+                #{introduce}, 0, #{inPrice}, #{salePrice}, #{memPrice}, now(),
+                null, #{createBy}, null, #{imgs}, #{productDate}, #{suppDate})
+    </insert>
+
+    <select id="findProductByNum" resultType="com.pn.entity.Product">
+        select *
+        from product
+        where product_num = #{productNum}
+    </select>
+
+    <update id="setStateByPid">
+        update product
+        set up_down_state=#{upDownState}
+        where product_id = #{productId}
+    </update>
+
+
+    <delete id="removeProductByIds">
+        delete from product
+        where product_id in
+        <foreach collection="list" open="(" close=")" separator="," item="prod">
+            #{prod}
+        </foreach>
+    </delete>
+
+    <update id="setProductById">
+        update product
+        set store_id       = #{storeId},
+            brand_id       = #{brandId},
+            product_name   = #{productName},
+            product_num    = #{productNum},
+            product_invent = #{productInvent},
+            type_id        = #{typeId},
+            supply_id      = #{supplyId},
+            place_id       = #{placeId},
+            unit_id        = #{unitId},
+            introduce      = #{introduce},
+            in_price       = #{inPrice},
+            sale_price     = #{salePrice},
+            mem_price      = #{memPrice},
+            update_time    = now(),
+            update_by      = #{updateBy},
+            imgs           = #{imgs},
+            product_date   = #{productDate},
+            supp_date      = #{suppDate}
+        where product_id = #{productId}
+
+    </update>
+
 </mapper>

@@ -34,11 +34,13 @@ public class LoginCheckFilter implements Filter {
         List<String> urlList = new ArrayList<>();
         urlList.add("/captcha/captchaImage");
         urlList.add("/login");
+        urlList.add("/logout");
+        urlList.add("/product/img-upload");
 
 //      过滤器拦截到的当前请求的资源路径
         String url = request.getServletPath();
         log.info("资源路径 - " + url);//也就是“/captcha/captchaImage”形式
-        if (urlList.contains(url)) {
+        if (urlList.contains(url)||url.contains("/imag/upload")) {
 //          放行
             filterChain.doFilter(request, response);
 //          不需要执行后面的代码
