@@ -102,11 +102,15 @@
     </insert>
 
     <select id="findProductByNum" resultType="com.pn.entity.Product">
-        select  * from product where product_num=#{productNum}
+        select *
+        from product
+        where product_num = #{productNum}
     </select>
 
     <update id="setStateByPid">
-        update product set up_down_state=#{upDownState} where product_id = #{productId}
+        update product
+        set up_down_state=#{upDownState}
+        where product_id = #{productId}
     </update>
 
 
@@ -118,5 +122,28 @@
         </foreach>
     </delete>
 
+    <update id="setProductById">
+        update product
+        set store_id       = #{storeId},
+            brand_id       = #{brandId},
+            product_name   = #{productName},
+            product_num    = #{productNum},
+            product_invent = #{productInvent},
+            type_id        = #{typeId},
+            supply_id      = #{supplyId},
+            place_id       = #{placeId},
+            unit_id        = #{unitId},
+            introduce      = #{introduce},
+            in_price       = #{inPrice},
+            sale_price     = #{salePrice},
+            mem_price      = #{memPrice},
+            update_time    = now(),
+            update_by      = #{updateBy},
+            imgs           = #{imgs},
+            product_date   = #{productDate},
+            supp_date      = #{suppDate}
+        where product_id = #{productId}
+
+    </update>
 
 </mapper>

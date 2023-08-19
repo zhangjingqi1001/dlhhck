@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf2eead-645f-4d7b-ad7c-885831b42833" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/upload/Capture001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/PurchaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/PurchaseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/PurchaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/PurchaseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PurchaseMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/filter/LoginCheckFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/filter/LoginCheckFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/mapper/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/mapper/ProductMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/ProductService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/impl/ProductServiceImpl.class" afterDir="false" />
@@ -32,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -77,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/image/upload" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/pn/entity" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -92,11 +88,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\entity" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\resources\static\image\upload" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\service\impl" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\service" />
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\resources\mapper" />
-      <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.pn.mapper" />
@@ -155,7 +151,7 @@
       <workItem from="1692107683953" duration="2254000" />
       <workItem from="1692233012511" duration="44000" />
       <workItem from="1692364243544" duration="6230000" />
-      <workItem from="1692417345733" duration="11817000" />
+      <workItem from="1692417345733" duration="16087000" />
     </task>
     <servers />
   </component>
