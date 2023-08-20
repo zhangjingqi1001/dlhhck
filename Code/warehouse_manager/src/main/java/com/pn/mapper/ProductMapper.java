@@ -43,4 +43,8 @@ public interface ProductMapper {
 
 //  根据分类id或父级分类id删除分类的方法
     public int removeProductType(Integer typeId);
+
+//  根据分类id修改分类的方法
+    public int setProductTypeById(ProductType productType);
+
 }

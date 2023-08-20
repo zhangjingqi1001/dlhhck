@@ -82,5 +82,22 @@ public class ProductTypeServiceImpl implements ProductTypeService {
         return success>0? Result.ok("删除成功") : Result.err(501,"删除失败");
     }
 
+    @CacheEvict(key = "'all:typeTree'")
+    @Override
+    public Result setProductType(ProductType productType) {
+//      修改的分类名称是否已经存在
+        ProductType prodType = new ProductType();
+        prodType.setTypeName(productType.getTypeName());
+        ProductType prodCategory = productMapper.findTypeByCodeOrName(prodType);
+
+        if (prodCategory!=null && !prodCategory.getTypeId().equals((productType.getTypeId()))){
+            return Result.err(501,"分类名称已经存在");
+        }
+
+        int success = productMapper.setProductTypeById(productType);
+
+        return success>0? Result.ok("修改分类成功") : Result.err(501,"修改分类失败");
+    }
+
 
 }

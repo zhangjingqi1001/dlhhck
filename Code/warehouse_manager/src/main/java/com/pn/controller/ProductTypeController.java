@@ -44,4 +44,11 @@ public class ProductTypeController {
        return productTypeService.deleteProductType(typeId);
     }
 
+//  修改商品分类的url
+    @RequestMapping("/type-update")
+    public Result updateProductType(@RequestBody ProductType productType){
+        return productTypeService.setProductType(productType);
+    }
+
+
 }

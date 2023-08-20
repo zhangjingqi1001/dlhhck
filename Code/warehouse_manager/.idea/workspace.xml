@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf2eead-645f-4d7b-ad7c-885831b42833" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/OutStoreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/ProductTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/OutStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/OutStoreMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/OutStoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/OutStoreServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OutStoreMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/controller/ProductTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/ProductTypeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/ProductMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/ProductTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/ProductTypeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/ProductTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/ProductTypeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/controller/ProductTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/controller/ProductTypeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/mapper/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/mapper/ProductMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/ProductTypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/ProductTypeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/impl/ProductTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/impl/ProductTypeServiceImpl.class" afterDir="false" />
@@ -157,6 +152,7 @@
       <workItem from="1692364243544" duration="6230000" />
       <workItem from="1692417345733" duration="18592000" />
       <workItem from="1692510192593" duration="6060000" />
+      <workItem from="1692542177353" duration="1910000" />
     </task>
     <servers />
   </component>

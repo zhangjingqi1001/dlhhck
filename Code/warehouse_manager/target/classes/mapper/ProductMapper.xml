@@ -168,6 +168,15 @@
     <delete id="removeProductType">
         delete
         from product_type
-        where type_id = #{typeId} or parent_id = #{typeId}
+        where type_id = #{typeId}
+           or parent_id = #{typeId}
     </delete>
+
+    <update id="setProductTypeById">
+        update product_type
+        set type_name=#{typeName},
+            type_desc=#{typeDesc}
+        where type_id= #{typeId}
+    </update>
+
 </mapper>
