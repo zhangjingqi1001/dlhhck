@@ -35,4 +35,12 @@ public interface ProductMapper {
 //  根据商品的id修改商品的信息
     public int setProductById(Product product);
 
+//  根据分类编码或者分类名称查询商品分类的方法
+    public ProductType findTypeByCodeOrName(ProductType productType);
+
+//  添加商品分类的方法
+    public int insertProductType(ProductType productType);
+
+//  根据分类id或父级分类id删除分类的方法
+    public int removeProductType(Integer typeId);
 }

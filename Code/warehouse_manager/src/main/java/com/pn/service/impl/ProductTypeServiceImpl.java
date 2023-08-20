@@ -1,10 +1,12 @@
 package com.pn.service.impl;
 
 import com.pn.entity.ProductType;
+import com.pn.entity.Result;
 import com.pn.mapper.ProductMapper;
 import com.pn.service.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -44,4 +46,41 @@ public class ProductTypeServiceImpl implements ProductTypeService {
         }
         return nTypeList;
     }
+
+    @Override
+    public Result checkTypeCode(String typeCode) {
+//      根据分类编码查询分类，并判断是否存在
+        ProductType productType  = new ProductType();
+        productType.setTypeCode(typeCode);
+        ProductType prodType = productMapper.findTypeByCodeOrName(productType);
+
+        return Result.ok(prodType == null);
+    }
+
+    @CacheEvict(key = "'all:typeTree'")
+    @Override
+    public Result saveProductType(ProductType productType) {
+//      首先校验一下分类名称是否存在
+        ProductType prodType = new ProductType();
+        prodType.setTypeName(productType.getTypeName());
+        ProductType prodCategory = productMapper.findTypeByCodeOrName(prodType);
+        if (prodCategory!=null){
+            return Result.err(501,"分类名称已经存在");
+        }
+
+//      分类名称不存在，添加分类
+        int success = productMapper.insertProductType(productType);
+
+        return success>0 ? Result.ok("添加分类成功") : Result.err(501,"添加分类失败");
+    }
+
+    @CacheEvict(key = "'all:typeTree'")
+    @Override
+    public Result deleteProductType(Integer typeId) {
+        int success = productMapper.removeProductType(typeId);
+
+        return success>0? Result.ok("删除成功") : Result.err(501,"删除失败");
+    }
+
+
 }

@@ -101,6 +101,7 @@
                 null, #{createBy}, null, #{imgs}, #{productDate}, #{suppDate})
     </insert>
 
+
     <select id="findProductByNum" resultType="com.pn.entity.Product">
         select *
         from product
@@ -146,4 +147,27 @@
 
     </update>
 
+    <select id="findTypeByCodeOrName" resultType="com.pn.entity.ProductType">
+        select *
+        from product_type
+        <where>
+            <if test="typeName !=null and typeName != '' ">
+                type_name = #{typeName}
+            </if>
+            <if test="typeCode !=null and typeCode != '' ">
+                or type_code = #{typeCode}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertProductType">
+        insert into product_type
+        values (null, #{parentId}, #{typeCode}, #{typeName}, #{typeDesc})
+    </insert>
+
+    <delete id="removeProductType">
+        delete
+        from product_type
+        where type_id = #{typeId} or parent_id = #{typeId}
+    </delete>
 </mapper>
