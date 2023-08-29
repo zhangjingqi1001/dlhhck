@@ -60,4 +60,24 @@
         limit #{page.limitIndex}, #{page.pageSize}
     </select>
 
+    <delete id="removerPurchaseById">
+        delete
+        from buy_list
+        where buy_id = #{buyId}
+    </delete>
+
+    <update id="setNumberById">
+        update buy_list
+        set buy_num      = #{buyNum},
+            fact_buy_num = #{factBuyNum}
+        where buy_id = #{buyId}
+    </update>
+
+    <update id="setIsInById">
+        update buy_list
+        set is_in =1
+        where buy_id = #{buyId}
+    </update>
+
+
 </mapper>

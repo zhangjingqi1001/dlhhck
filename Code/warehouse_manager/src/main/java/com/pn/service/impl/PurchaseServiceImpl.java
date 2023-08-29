@@ -40,4 +40,16 @@ public class PurchaseServiceImpl implements PurchaseService {
         return page;
     }
 
+    @Override
+    public Result deletePurchaseById(Integer buyId) {
+        int success = purchaseMapper.removerPurchaseById(buyId);
+        return success>0 ? Result.ok("删除采购单成功") : Result.err(501,"删除采购单失败");
+    }
+
+    @Override
+    public Result updatePurchaseById(Purchase purchase) {
+        int success = purchaseMapper.setNumberById(purchase);
+        return success>0 ? Result.ok("删除采购单成功") : Result.err(501,"删除采购单失败");
+    }
+
 }
