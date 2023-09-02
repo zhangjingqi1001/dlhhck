@@ -57,4 +57,25 @@
         insert into role_auth
          values (null ,#{roleId},#{authId})
     </insert>
+
+
+    <select id="checkScore" statementType="CALLABLE" >
+        {
+            call p4(#{score, mode=IN,jdbcType=INTEGER}, #{result , mode=OUT, jdbcType=VARCHAR})
+            }
+    </select>
+
+    <select id="checkScoreAndGetAuth" statementType="CALLABLE" resultType="com.pn.entity.Auth">
+        {
+            call p5(#{score, mode=IN,jdbcType=INTEGER}, #{result , mode=OUT, jdbcType=VARCHAR})
+        }
+    </select>
+
+    <select id="checkScoreAndGetBrand"  statementType="CALLABLE"  resultType="com.pn.entity.Brand">
+        {
+            call p5(#{score, mode=IN,jdbcType=INTEGER}, #{result , mode=OUT, jdbcType=VARCHAR})
+            }
+    </select>
+
+
 </mapper>

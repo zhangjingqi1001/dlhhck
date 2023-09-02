@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf2eead-645f-4d7b-ad7c-885831b42833" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/entity/InStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/InStoreMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/InStoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/InStoreServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/InStoreMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_7_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_68.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15to18_1_69.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/GetIdentityIdTestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/MD2Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/MD4Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/PurchaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/PurchaseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/PurchaseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/PurchaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/PurchaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/PurchaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/PurchaseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PurchaseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PurchaseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/controller/PurchaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/controller/PurchaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/mapper/PurchaseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/mapper/PurchaseMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/PurchaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/PurchaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/impl/PurchaseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/impl/PurchaseServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PurchaseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PurchaseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Note/1. 传智教育环境搭建.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/1. 传智教育环境搭建.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Note/六、采购单管理模块.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/六、采购单管理模块.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pn/WarehouseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pn/WarehouseApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/mapper/AuthMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/mapper/AuthMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AuthMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/upload/edd9b17bbf3c6b08bfe3a9a2da7109d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/pn/WarehouseApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/pn/WarehouseApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2TJqWcsracUMn4UDrCCDX8f2srB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -85,7 +83,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="ReactorSettings">
@@ -100,10 +98,72 @@
       <recent name="E:\Note\dlhhck\Code\warehouse_manager\src\main\java\com\pn\entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pn" />
       <recent name="com.pn.mapper" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.WarehouseApplicationTests.testCheckScoreAndGetAuth">
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pn.Test" />
+      <module name="warehouse_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WarehouseApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="warehouse_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pn" />
+      <option name="MAIN_CLASS_NAME" value="com.pn.WarehouseApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WarehouseApplicationTests.testCheckScoreAndGetAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="warehouse_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pn" />
+      <option name="MAIN_CLASS_NAME" value="com.pn.WarehouseApplicationTests" />
+      <option name="METHOD_NAME" value="testCheckScoreAndGetAuth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WarehouseApplicationTests.testCheckScoreAndGetBrand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="warehouse_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pn" />
+      <option name="MAIN_CLASS_NAME" value="com.pn.WarehouseApplicationTests" />
+      <option name="METHOD_NAME" value="testCheckScoreAndGetBrand" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WarehouseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="warehouse_manager" />
       <extension name="coverage">
@@ -119,6 +179,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WarehouseApplicationTests.testCheckScoreAndGetAuth" />
+        <item itemvalue="JUnit.WarehouseApplicationTests.testCheckScoreAndGetBrand" />
+        <item itemvalue="JUnit.WarehouseApplicationTests.contextLoads" />
+        <item itemvalue="Application.Test (1)" />
         <item itemvalue="Spring Boot.WarehouseApplication" />
       </list>
     </recent_temporary>
@@ -161,7 +225,10 @@
       <workItem from="1692542177353" duration="2217000" />
       <workItem from="1692577651290" duration="82000" />
       <workItem from="1692702180471" duration="7629000" />
-      <workItem from="1693309582293" duration="5667000" />
+      <workItem from="1693309582293" duration="6019000" />
+      <workItem from="1693363662967" duration="15142000" />
+      <workItem from="1693441800011" duration="10053000" />
+      <workItem from="1693528335270" duration="54000" />
     </task>
     <servers />
   </component>

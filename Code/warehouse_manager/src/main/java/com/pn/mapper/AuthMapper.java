@@ -2,10 +2,12 @@ package com.pn.mapper;
 
 import com.pn.dto.AssignAuthDto;
 import com.pn.entity.Auth;
+import com.pn.entity.Brand;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface AuthMapper {
@@ -24,6 +26,11 @@ public interface AuthMapper {
 //  添加角色权限关系的方法
     public int insertRoleAuth(@Param("roleId") Integer roleId,@Param("authId") Integer authId);
 
+    void checkScore(Map<String,Object> param);
 
+
+    public List<Auth> checkScoreAndGetAuth(Map<String,Object> param);
+
+    public List<Brand> checkScoreAndGetBrand(Map<String,Object> param);
 
 }
