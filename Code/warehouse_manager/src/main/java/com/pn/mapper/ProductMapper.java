@@ -47,4 +47,10 @@ public interface ProductMapper {
 //  根据分类id修改分类的方法
     public int setProductTypeById(ProductType productType);
 
+//  根据id修改商品库存的方法
+    public int setInventById(@Param("productId")Integer productId,@Param("invent")Integer invent);
+
+//  根据商品id查询商品库存的方法
+    public int findInventById(@Param("productId")Integer productId);
+
 }

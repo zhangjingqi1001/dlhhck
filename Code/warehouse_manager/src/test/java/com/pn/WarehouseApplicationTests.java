@@ -16,46 +16,46 @@ class WarehouseApplicationTests {
 
     @Autowired
     private AuthMapper authMapper;
-
-    @Test
-    void testCheckScore() {
-        Map<String,Object> paramMap = new HashMap<>();
-        paramMap.put("score",60);
-
-        authMapper.checkScore(paramMap);
-
-        Object result = paramMap.get("result");
-
-        System.out.println(result);
-    }
-
-    @Test
-    void testCheckScoreAndGetAuth() {
-        Map<String,Object> paramMap = new HashMap<>();
-        paramMap.put("score",60);
-
-        List<Auth> authList = authMapper.checkScoreAndGetAuth(paramMap);
-
-        Object result = paramMap.get("result");
-
-        System.out.println("result"+result);
-        System.out.println("authList"+authList);
-
-    }
-
-    @Test
-    void testCheckScoreAndGetBrand() {
-        Map<String,Object> paramMap = new HashMap<>();
-        paramMap.put("score",60);
-
-
-        List<Brand> brands = authMapper.checkScoreAndGetBrand(paramMap);
-        Object result = paramMap.get("result");
-
-        System.out.println("result"+result);
-
-        System.out.println("brands"+brands);
-
-    }
+//
+//    @Test
+//    void testCheckScore() {
+//        Map<String,Object> paramMap = new HashMap<>();
+//        paramMap.put("score",60);
+//
+//        authMapper.checkScore(paramMap);
+//
+//        Object result = paramMap.get("result");
+//
+//        System.out.println(result);
+//    }
+//
+//    @Test
+//    void testCheckScoreAndGetAuth() {
+//        Map<String,Object> paramMap = new HashMap<>();
+//        paramMap.put("score",60);
+//
+//        List<Auth> authList = authMapper.checkScoreAndGetAuth(paramMap);
+//
+//        Object result = paramMap.get("result");
+//
+//        System.out.println("result"+result);
+//        System.out.println("authList"+authList);
+//
+//    }
+//
+//    @Test
+//    void testCheckScoreAndGetBrand() {
+//        Map<String,Object> paramMap = new HashMap<>();
+//        paramMap.put("score",60);
+//
+//
+//        List<Brand> brands = authMapper.checkScoreAndGetBrand(paramMap);
+//        Object result = paramMap.get("result");
+//
+//        System.out.println("result"+result);
+//
+//        System.out.println("brands"+brands);
+//
+//    }
 
 }

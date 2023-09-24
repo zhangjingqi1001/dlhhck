@@ -5,11 +5,16 @@
 <mapper namespace="com.pn.mapper.OutStoreMapper">
 
     <insert id="insertOutStore">
-        insert into out_store values(
-          null, #{productId}, #{storeId}, null, null,
-          #{outNum}, #{createBy}, now(), 0
-        )
+        insert into out_store
+        values (null, #{productId}, #{storeId}, null, null,
+                #{outNum}, #{createBy}, now(), 0)
     </insert>
+
+    <update id="setIsOutById">
+        update out_store
+        set is_out =1
+        where outs_id = #{outStoreId}
+    </update>
 
 
 </mapper>

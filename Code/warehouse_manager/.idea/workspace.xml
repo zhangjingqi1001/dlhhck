@@ -5,22 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf2eead-645f-4d7b-ad7c-885831b42833" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_7_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_68.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15to18_1_69.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/GetIdentityIdTestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/MD2Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/MD4Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/InStoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/controller/OutStoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/controller/OutStoreController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/AuthMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AuthMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/InStoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/InStoreMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/OutStoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/OutStoreMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/InStoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/InStoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/OutStoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/OutStoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/InStoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/InStoreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/OutStoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pn/service/impl/OutStoreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/InStoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/InStoreMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OutStoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OutStoreMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/pn/WarehouseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pn/WarehouseApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pn/mapper/AuthMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/mapper/AuthMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AuthMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/upload/edd9b17bbf3c6b08bfe3a9a2da7109d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/mapper/InStoreMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/mapper/InStoreMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pn/service/impl/InStoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pn/service/impl/InStoreServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/pn/WarehouseApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/pn/WarehouseApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Note/1.仓库管理系统搭建.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/1.仓库管理系统搭建.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Note/2.登录相关业务.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/2.登录相关业务.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Note/4. 角色管理.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/4. 角色管理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Note/5. 商品管理模块.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Note/5. 商品管理模块.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,19 +80,11 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/pn/service/impl" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -102,7 +102,7 @@
       <recent name="com.pn.mapper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WarehouseApplicationTests.testCheckScoreAndGetAuth">
+  <component name="RunManager" selected="Spring Boot.WarehouseApplication">
     <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pn.Test" />
       <module name="warehouse_manager" />
@@ -179,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.WarehouseApplication" />
         <item itemvalue="JUnit.WarehouseApplicationTests.testCheckScoreAndGetAuth" />
         <item itemvalue="JUnit.WarehouseApplicationTests.testCheckScoreAndGetBrand" />
         <item itemvalue="JUnit.WarehouseApplicationTests.contextLoads" />
         <item itemvalue="Application.Test (1)" />
-        <item itemvalue="Spring Boot.WarehouseApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -229,6 +229,14 @@
       <workItem from="1693363662967" duration="15142000" />
       <workItem from="1693441800011" duration="10053000" />
       <workItem from="1693528335270" duration="54000" />
+      <workItem from="1693666511884" duration="2803000" />
+      <workItem from="1693787938796" duration="9000" />
+      <workItem from="1693788902544" duration="29000" />
+      <workItem from="1693789552689" duration="88000" />
+      <workItem from="1693800907188" duration="940000" />
+      <workItem from="1693804742973" duration="24000" />
+      <workItem from="1695114351413" duration="673000" />
+      <workItem from="1695522062835" duration="10907000" />
     </task>
     <servers />
   </component>

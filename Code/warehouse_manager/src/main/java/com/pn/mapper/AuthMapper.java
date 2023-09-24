@@ -1,5 +1,6 @@
 package com.pn.mapper;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import com.pn.dto.AssignAuthDto;
 import com.pn.entity.Auth;
 import com.pn.entity.Brand;
@@ -26,10 +27,10 @@ public interface AuthMapper {
 //  添加角色权限关系的方法
     public int insertRoleAuth(@Param("roleId") Integer roleId,@Param("authId") Integer authId);
 
-    void checkScore(Map<String,Object> param);
+    void checkScore(Map<MysqlxDatatypes.Scalar.String,Object> param);
 
 
-    public List<Auth> checkScoreAndGetAuth(Map<String,Object> param);
+    public List<Auth> checkScoreAndGetAuth(Map<MysqlxDatatypes.Scalar.String,Object> param);
 
     public List<Brand> checkScoreAndGetBrand(Map<String,Object> param);
 

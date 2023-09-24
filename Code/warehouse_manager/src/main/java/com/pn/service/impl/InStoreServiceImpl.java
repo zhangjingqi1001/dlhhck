@@ -25,6 +25,10 @@ public class InStoreServiceImpl implements InStoreService {
     @Autowired
     private PurchaseMapper purchaseMapper;
 
+    @Autowired
+    private ProductMapper productMapper;
+
+
 //    //添加入库单的业务方法
     @Transactional//事务处理
     @Override
@@ -40,6 +44,37 @@ public class InStoreServiceImpl implements InStoreService {
             return Result.err(Result.CODE_ERR_BUSINESS, "入库单添加失败！");
         }
         return Result.err(Result.CODE_ERR_BUSINESS, "入库单添加失败！");
+    }
+
+    @Override
+    public Page queryInStore(Page page, InStore inStore) {
+//      查询入库单行数
+        Integer count = inStoreMapper.findInStoreCount(inStore);
+
+//      分页查询入库单
+        List<InStore> inStorePageList = inStoreMapper.findInStorePage(page, inStore);
+
+        page.setResultList(inStorePageList);
+        page.setTotalNum(count);
+
+        return page;
+    }
+
+    @Override
+    @Transactional
+    public Result inStoreConfirm(InStore inStore) {
+//      修改入库单状态
+        int success = inStoreMapper.setIsInById(inStore.getInsId());
+        if (success>0){
+//          修改商品库存
+//          商品入库数量增加
+            int successCount = productMapper.setInventById(inStore.getProductId(), inStore.getInNum());
+            if (successCount>0){
+                return Result.ok("入库单确认成功！");
+            }
+        }
+
+        return Result.err(Result.CODE_ERR_BUSINESS,"入库单确认失败！");
     }
 
 }

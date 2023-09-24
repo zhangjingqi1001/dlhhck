@@ -36,7 +36,7 @@ public class OutStoreController {
 
     @RequestMapping("/outstore-add")
     public Result addOutStore(@RequestBody OutStore outStore,
-                              @RequestHeader("Token") String token){
+                              @RequestHeader("Token") String token) {
 
         //获取当前登录的用户
         CurrentUser currentUser = tokenUtils.getCurrentUser(token);
@@ -46,6 +46,12 @@ public class OutStoreController {
 
         //响应
         return outStoreService.saveOutStore(outStore);
+    }
+
+    //  确认出库单url接口
+    @RequestMapping("/outstore-confirm")
+    public Result confirmOutStore(@RequestBody OutStore outStore) {
+        return outStoreService.outStoreConfirm(outStore);
     }
 
 }

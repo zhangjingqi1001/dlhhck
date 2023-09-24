@@ -176,7 +176,16 @@
         update product_type
         set type_name=#{typeName},
             type_desc=#{typeDesc}
-        where type_id= #{typeId}
+        where type_id = #{typeId}
     </update>
+
+    <!--根据id修改商品库存的方法-->
+    <update id="setInventById">
+      update product set product_invent = product_invent+#{invent} where product_id = #{productId}
+    </update>
+
+    <select id="findInventById" resultType="java.lang.Integer">
+       select product_invent from product where product_id  =#{productId}
+    </select>
 
 </mapper>
